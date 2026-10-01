@@ -1,0 +1,45 @@
+# Render Blueprint: API + PostgreSQL. Deploy with "New > Blueprint" in Render.
+services:
+  - type: web
+    name: keemstore-api
+    runtime: node
+    rootDir: server
+    plan: starter
+    buildCommand: npm install --omit=dev
+    preDeployCommand: npm run db:migrate
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: keemstore-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false # e.g. https://keemstore.vercel.app or your domain
+      - key: SERVER_URL
+        sync: false # this service's public URL
+      - key: CORS_ORIGINS
+        sync: false # optional extra origins, comma separated
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: AMAZON_ASSOCIATE_TAG
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ALLOW_PUBLIC_REGISTRATION
+        value: "false"
+
+databases:
+  - name: keemstore-db
+    plan: basic-256mb
+    databaseName: keemstore

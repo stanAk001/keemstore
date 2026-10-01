@@ -1,0 +1,323 @@
+{
+ "headphones": {
+  "url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+  "credit": "C D-X",
+  "alt": "flatlay photography of wireless headphones",
+  "w": 5760,
+  "h": 3840
+ },
+ "smartplug": {
+  "url": "https://images.unsplash.com/photo-1610056494052-6a4f83a8368c",
+  "credit": "Kelly Sikkema",
+  "alt": "black usb cable plugged in white electric socket",
+  "w": 3507,
+  "h": 5260
+ },
+ "smartspeaker": {
+  "url": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152",
+  "credit": "BENCE BOROS",
+  "alt": "turned-on charcoal Google Home Mini and smartphone",
+  "w": 6720,
+  "h": 4480
+ },
+ "robotvac": {
+  "url": "https://images.unsplash.com/photo-1653990480360-31a12ce9723e",
+  "credit": "Onur Binay",
+  "alt": "a black robot vacuum on a wooden floor"
+ },
+ "sunrise": {
+  "url": "https://images.unsplash.com/photo-1774185644992-17b445c938e6",
+  "credit": "Suhas Hanjar",
+  "alt": "An old alarm clock sits on a wooden table",
+  "w": 4000,
+  "h": 6000
+ },
+ "powerbank": {
+  "url": "https://images.unsplash.com/photo-1557767382-97b28f5488e7",
+  "credit": "Andreas Haslinger",
+  "alt": "black smartphone with charger cord connected",
+  "w": 6240,
+  "h": 4160
+ },
+ "lantern": {
+  "url": "https://images.unsplash.com/photo-1569474361233-0bdf04817133",
+  "credit": "Evgeni Tcherkasski",
+  "alt": "turned-on gas lamp on rock beside sea"
+ },
+ "ringlight": {
+  "url": "https://images.unsplash.com/photo-1478826160983-e6db8c7d537a",
+  "credit": "Nadine E",
+  "alt": "round white LED light",
+  "w": 5184,
+  "h": 3456
+ },
+ "mic": {
+  "url": "https://images.unsplash.com/photo-1590602847861-f357a9332bbc",
+  "credit": "Jukka Aalho",
+  "alt": "black and silver microphone with stand",
+  "w": 4160,
+  "h": 6240
+ },
+ "webcam": {
+  "url": "https://images.unsplash.com/photo-1658337069142-b4b81a4881eb",
+  "credit": "Hillary Black",
+  "alt": "a computer on a desk",
+  "w": 5046,
+  "h": 3364
+ },
+ "desklamp": {
+  "url": "https://images.unsplash.com/photo-1667312939978-64cf31718a6e",
+  "credit": "Karolina Grabowska",
+  "alt": "a lamp and books on a table",
+  "w": 4381,
+  "h": 6571
+ },
+ "standing": {
+  "url": "https://images.unsplash.com/photo-1623177623442-979c1e42c255",
+  "credit": "ergonofis",
+  "alt": "A wooden standing desk with a computer monitor and keyboard in a home office",
+  "w": 3000,
+  "h": 4500
+ },
+ "keyboard": {
+  "url": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef",
+  "credit": "Stefen Tan",
+  "alt": "black and orange computer keyboard",
+  "w": 3691,
+  "h": 3692
+ },
+ "kettle": {
+  "url": "https://images.unsplash.com/photo-1643114786355-ff9e52736eab",
+  "credit": "engin akyurt",
+  "alt": "a black and white photo of a water kettle",
+  "w": 10000,
+  "h": 6667
+ },
+ "blanket": {
+  "url": "https://images.unsplash.com/photo-1688384452844-8364c3e2fc28",
+  "credit": "Slaapwijsheid.nl",
+  "alt": "a bed sitting in a bedroom next to a window",
+  "w": 6047,
+  "h": 4031
+ },
+ "diffuser": {
+  "url": "https://images.unsplash.com/photo-1608571702346-bf078a741b19",
+  "credit": "Kadarius Seegars",
+  "alt": "person holding brown and white cup"
+ },
+ "massager": {
+  "url": "https://images.unsplash.com/photo-1611908200005-b898ddde09cf",
+  "credit": "naipo.de",
+  "alt": "person holding black and gray cordless hand drill"
+ },
+ "bottle": {
+  "url": "https://images.unsplash.com/photo-1602143407151-7111542de6e8",
+  "credit": "Joan Tran",
+  "alt": "green bottle on white table",
+  "w": 4006,
+  "h": 6008
+ },
+ "trenchcoat": {
+  "url": "https://images.unsplash.com/photo-1692180142575-c31fcd106b5b",
+  "credit": "Tamara Harhai",
+  "alt": "a woman leaning against a metal structure in a city",
+  "w": 5464,
+  "h": 8192
+ },
+ "overshirt": {
+  "url": "https://images.unsplash.com/photo-1617114919297-3c8ddb01f599",
+  "credit": "Mohamad Khosravi",
+  "alt": "A man in a tan jacket and blue jeans leaning against a stone wall",
+  "w": 2000,
+  "h": 3000
+ },
+ "sneakers": {
+  "url": "https://images.unsplash.com/photo-1600269452121-4f2416e55c28",
+  "credit": "Jeff Tumale",
+  "alt": "A white sneaker resting on black and white athletic clothing",
+  "w": 2581,
+  "h": 3226
+ },
+ "knit": {
+  "url": "https://images.unsplash.com/photo-1574201635302-388dd92a4c3f",
+  "credit": "Valna Studio",
+  "alt": "person wearing grey knit sweater",
+  "w": 3284,
+  "h": 4104
+ },
+ "watch": {
+  "url": "https://images.unsplash.com/photo-1552493987-2841b6dd22dc",
+  "credit": "Constantin Panagopoulos",
+  "alt": "white wristwatch with brown strap",
+  "w": 3752,
+  "h": 5621
+ },
+ "tote": {
+  "url": "https://images.unsplash.com/photo-1624687943971-e86af76d57de",
+  "credit": "Ugluk Potroshitel",
+  "alt": "brown leather handbag on white table",
+  "w": 4000,
+  "h": 6000
+ },
+ "halloween": {
+  "url": "https://images.unsplash.com/photo-1477516561410-f0b5dd8319e4",
+  "credit": "Beth Teutschmann",
+  "alt": "two lighted jack-o-lanterns during night time",
+  "w": 4896,
+  "h": 2754
+ },
+ "halloweennails": {
+  "url": "https://images.unsplash.com/photo-1698308233758-d55c98fd7444",
+  "credit": "Roman Titov",
+  "alt": "a woman's hand with black and silver nails",
+  "w": 3024,
+  "h": 4032
+ },
+ "thanksgiving": {
+  "url": "https://images.unsplash.com/photo-1510195429239-8a5c0222144a",
+  "credit": "Megan Watson",
+  "alt": "white ceramic bowl with rice and green vegetable",
+  "w": 5616,
+  "h": 3744
+ },
+ "christmas": {
+  "url": "https://images.unsplash.com/photo-1545608444-f045a6db6133",
+  "credit": "Mel Poole",
+  "alt": "gift boxes with red baubles on top",
+  "w": 5710,
+  "h": 3797
+ },
+ "nye": {
+  "url": "https://images.unsplash.com/photo-1732895224622-79fe4691e2f5",
+  "credit": "Natalie Kinnear",
+  "alt": "A happy new year card with gold bells and confetti",
+  "w": 7927,
+  "h": 5287
+ },
+ "gifts": {
+  "url": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f",
+  "credit": "Jess Bailey",
+  "alt": "brown gift box with pink ribbon",
+  "w": 4608,
+  "h": 3456
+ },
+ "bedroom": {
+  "url": "https://images.unsplash.com/photo-1612152605347-f93296cb657d",
+  "credit": "Isaac Martin",
+  "alt": "white bed linen near white wooden door",
+  "w": 5472,
+  "h": 3648
+ },
+ "desk": {
+  "url": "https://images.unsplash.com/photo-1510519138101-570d1dca3d66",
+  "credit": "Nikita Kachanovsky",
+  "alt": "a desk with a computer monitor and keyboard on it",
+  "w": 5302,
+  "h": 3631
+ },
+ "creator": {
+  "url": "https://images.unsplash.com/photo-1636971828014-0f3493cba88a",
+  "credit": "TheRegisti",
+  "alt": "a person typing on a keyboard next to a laptop",
+  "w": 5691,
+  "h": 3794
+ },
+ "outage": {
+  "url": "https://assets.mixkit.co/videos/17450/17450-thumb-720-0.jpg",
+  "credit": "Mixkit",
+  "alt": "Laptop in a dark room during a power cut"
+ },
+ "lazy": {
+  "url": "https://images.unsplash.com/photo-1511766836919-bc10e68e2d1e",
+  "credit": "Roberto Nickson",
+  "alt": "woman lying on sofa in rooftop",
+  "w": 2730,
+  "h": 4096
+ },
+ "fashionw": {
+  "url": "https://images.unsplash.com/photo-1578632292335-df3abbb0d586",
+  "credit": "Max Titov",
+  "alt": "woman standing in park",
+  "w": 4160,
+  "h": 6240
+ },
+ "fashionm": {
+  "url": "https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504",
+  "credit": "Adrian Ordonez",
+  "alt": "man holding his leather jacket"
+ },
+ "home": {
+  "url": "https://images.unsplash.com/photo-1564078516393-cf04bd966897",
+  "credit": "Roberto Nickson",
+  "alt": "gray padded chaise couch beside window",
+  "w": 3648,
+  "h": 5472
+ },
+ "gadgets": {
+  "url": "https://images.unsplash.com/photo-1615655406736-b37c4fabf923",
+  "credit": "Onur Binay",
+  "alt": "a black table topped with electronics and a microphone",
+  "w": 6000,
+  "h": 4000
+ },
+ "deals": {
+  "url": "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0",
+  "credit": "Jacek Dylag",
+  "alt": "brown Henry paper bag",
+  "w": 4256,
+  "h": 2832
+ },
+ "smarthome": {
+  "url": "https://images.unsplash.com/photo-1663373460374-d78ee5369fd5",
+  "credit": "James Yarema",
+  "alt": "iPhone with Dynamic Island showing the home screen"
+ },
+ "kitchen": {
+  "url": "https://images.unsplash.com/photo-1730597363352-0a8fe6eb5d12",
+  "credit": "Kat",
+  "alt": "A cup filled with wooden utensils on top of a table",
+  "w": 3155,
+  "h": 3903
+ },
+ "personal": {
+  "url": "https://images.unsplash.com/photo-1694538991472-60a784a9b4cb",
+  "credit": "Kat Sylvester",
+  "alt": "a table topped with black bottles and candles",
+  "w": 5018,
+  "h": 3234
+ },
+ "costume": {
+  "url": "https://images.unsplash.com/photo-1697041273673-056e098cc3f2",
+  "credit": "Sofia Holmberg",
+  "alt": "a black hat sitting on top of a rock"
+ },
+ "lightstrip": {
+  "url": "https://images.unsplash.com/photo-1603726477468-da922b12b8ce",
+  "credit": "Nick Wright",
+  "alt": "white pillow on bed near window"
+ },
+ "earbuds": {
+  "url": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
+  "credit": "Daniel Romero",
+  "alt": "black and white headphones on white table",
+  "w": 3701,
+  "h": 2082
+ },
+ "tripod": {
+  "url": "https://images.unsplash.com/photo-1576299090369-9067e4adca28",
+  "credit": "Adesh Bankar",
+  "alt": "black smartphone near shore",
+  "w": 5392,
+  "h": 3589
+ },
+ "hero2": {
+  "url": "https://images.unsplash.com/photo-1609248919706-244ad4c7e9dc",
+  "credit": "Sixteen Miles Out",
+  "alt": "white ceramic mug on white table"
+ },
+ "hero3": {
+  "url": "https://images.unsplash.com/photo-1610136649349-0f646f318053",
+  "credit": "Lucas George Wendt",
+  "alt": "black framed sunglasses on white table"
+ }
+}

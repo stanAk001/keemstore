@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   keemstore design tokens
+   Paper + ink editorial palette with ONE accent (persimmon).
+   Radii stay small; depth comes from hairlines and photography, not shadow.
+   ========================================================================== */
+@theme {
+  --font-serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --color-paper: #f4f0e8;
+  --color-paper-2: #ebe5d9;
+  --color-paper-3: #e2dacb;
+  --color-card: #fbf9f5;
+  --color-ink: #171411;
+  --color-ink-2: #37312a;
+  --color-muted: #6b6358;
+  --color-faint: #9a9084;
+  --color-line: #d9d0c1;
+  --color-line-strong: #bfb4a2;
+
+  --color-accent: #d9481e;
+  --color-accent-ink: #b23a14; /* accent for text on paper, AA contrast */
+  --color-accent-soft: #f5d9cc;
+
+  --color-good: #2f6b4f;
+  --color-good-soft: #dde9e0;
+  --color-bad: #9b3a1c;
+
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+
+  --shadow-lift: 0 1px 0 rgb(23 20 17 / 0.04), 0 8px 24px -12px rgb(23 20 17 / 0.18);
+  --shadow-pop: 0 18px 50px -20px rgb(23 20 17 / 0.35);
+
+  --text-display: clamp(3rem, 1.6rem + 6vw, 7.25rem);
+  --text-display--line-height: 0.92;
+  --text-headline: clamp(1.9rem, 1.35rem + 2.8vw, 3.9rem);
+  --text-headline--line-height: 1;
+  --text-title: clamp(1.6rem, 1.25rem + 1.3vw, 2.4rem);
+  --text-title--line-height: 1.05;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-fade-up: fade-up 0.6s var(--ease-out-soft) both;
+  --animate-fade-in: fade-in 0.35s ease-out both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Mobile menu entrance. */
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Seamless ticker: the track holds two copies and slides by one. */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* Audio level bars (motion scenes). */
+@keyframes eq-bar {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+
+/* Energy pulse travelling along a cable (motion scenes). */
+@keyframes cable-flow {
+  to { stroke-dashoffset: -384; }
+}
+
+/* Sheen sweeping across a progress bar. */
+@keyframes shimmer-x {
+  from { background-position: -50% 0; }
+  to { background-position: 150% 0; }
+}
+
+/* Slow drift used by motion scenes (disabled by the reduced-motion rule below). */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.6em); }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 5.5rem;
+  }
+  /* Safety net: nothing may cause sideways page scrolling. clip (unlike hidden)
+     does not create a scroll container, so sticky headers keep working. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  img {
+    color: transparent; /* hide alt text flash while loading */
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10;
+  }
+  .eyebrow {
+    @apply font-mono text-[0.7rem] font-medium tracking-[0.14em] uppercase text-muted;
+  }
+  .rule {
+    @apply border-t border-line;
+  }
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s var(--ease-out-soft);
+  }
+  .link-underline:hover,
+  .group:hover .link-underline {
+    background-size: 100% 1px;
+  }
+  .prose-editorial {
+    @apply text-[1.075rem] leading-[1.75] text-ink-2;
+  }
+  .prose-editorial a {
+    @apply text-ink underline decoration-accent decoration-1 underline-offset-[3px] hover:decoration-2;
+  }
+  .prose-editorial strong {
+    @apply font-semibold text-ink;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .skeleton {
+    background: linear-gradient(90deg, var(--color-paper-2) 0%, var(--color-paper-3) 50%, var(--color-paper-2) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    from { background-position: 100% 0; }
+    to { background-position: -100% 0; }
+  }
+  /* Admin form controls */
+  .input {
+    @apply w-full rounded-sm border border-line-strong bg-card px-3 py-2 text-sm text-ink placeholder:text-faint
+      transition-colors focus:border-ink focus:outline-none;
+  }
+  .label {
+    @apply mb-1.5 block text-[0.78rem] font-medium text-ink-2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

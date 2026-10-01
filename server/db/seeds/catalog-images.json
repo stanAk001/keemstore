@@ -1,0 +1,792 @@
+{
+ "thermostat": {
+  "url": "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3",
+  "credit": "Dan LeFebvre",
+  "alt": "gray Nest thermostat displaying at 63"
+ },
+ "doorbell": {
+  "url": "https://images.unsplash.com/photo-1633194883650-df448a10d554",
+  "credit": "James Yarema",
+  "alt": "a camera mounted to the side of a wall"
+ },
+ "bulbs": {
+  "url": "https://images.unsplash.com/photo-1532007271951-c487760934ae",
+  "credit": "Federico Bottos",
+  "alt": "white bulb"
+ },
+ "smartlock": {
+  "url": "https://images.unsplash.com/photo-1634224143538-ce0221abf732",
+  "credit": "rc.xyz NFT gallery",
+  "alt": "a close up of a metal object with numbers on it"
+ },
+ "indoorcam": {
+  "url": "https://images.unsplash.com/photo-1618482914248-29272d021005",
+  "credit": "Milan Malkomes",
+  "alt": "A tall pole mounted with multiple Panomera surveillance cameras against a grey sky"
+ },
+ "display": {
+  "url": "https://images.unsplash.com/photo-1650682009477-52fd77302b78",
+  "credit": "James Yarema",
+  "alt": "a white tablet with a screen"
+ },
+ "mesh": {
+  "url": "https://images.unsplash.com/photo-1606904825846-647eb07f5be2",
+  "credit": "Compare Fibre",
+  "alt": "white router on white table"
+ },
+ "smokealarm": {
+  "url": "https://images.unsplash.com/photo-1767672857994-73a27b723506",
+  "credit": "茂清 熊",
+  "alt": "Box of new white smoke detectors with instructions"
+ },
+ "leak": {
+  "url": "https://images.unsplash.com/photo-1609210884848-2d530cfb2a07",
+  "credit": "Callum Hill",
+  "alt": "stainless steel sink with faucet"
+ },
+ "curtainbot": {
+  "url": "https://images.unsplash.com/photo-1528822855841-e8bf3134cdc9",
+  "credit": "Jon Tyson",
+  "alt": "white glass panel curtains"
+ },
+ "nightlights": {
+  "url": "https://images.unsplash.com/photo-1629410484397-a4dcd74088a0",
+  "credit": "Gonzalo Kenny",
+  "alt": "white hallway with white light"
+ },
+ "purifier": {
+  "url": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92",
+  "credit": "Minh Pham",
+  "alt": "a living room filled with furniture and a large window"
+ },
+ "switch": {
+  "url": "https://images.unsplash.com/photo-1556217994-22de7face210",
+  "credit": "Isabella Fischer",
+  "alt": "white wall switch"
+ },
+ "garage": {
+  "url": "https://images.unsplash.com/photo-1507035159636-7a86eb324885",
+  "credit": "Kyle Head",
+  "alt": "white roller shutter"
+ },
+ "outdoorplug": {
+  "url": "https://images.unsplash.com/photo-1589830468294-765e8aba10a9",
+  "credit": "Giorgio Trovato",
+  "alt": "string lights in the street"
+ },
+ "sprinkler": {
+  "url": "https://images.unsplash.com/photo-1693776472225-be367ccf88b7",
+  "credit": "Anastasiya Badun",
+  "alt": "a man is spraying water on the grass"
+ },
+ "openear": {
+  "url": "https://images.unsplash.com/photo-1758520706103-41d01f815640",
+  "credit": "Vitaly Gariev",
+  "alt": "Man running with headphones in a forest"
+ },
+ "tracker": {
+  "url": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1",
+  "credit": "Lloyd Dirks",
+  "alt": "person wearing Apple Watch at 14:24"
+ },
+ "smartwatch": {
+  "url": "https://images.unsplash.com/photo-1546868871-7041f2a55e12",
+  "credit": "Daniel Korpai",
+  "alt": "space gray Apple Watch with black Sports Band"
+ },
+ "speaker": {
+  "url": "https://images.unsplash.com/photo-1746106525790-7043d288f5a0",
+  "credit": "tonny zhong",
+  "alt": "A green speaker is centered with several gadgets"
+ },
+ "ereader": {
+  "url": "https://images.unsplash.com/photo-1630343710506-89f8b9f21d31",
+  "credit": "Clay Banks",
+  "alt": "person reading book on brown and beige textile"
+ },
+ "wirelesspad": {
+  "url": "https://images.unsplash.com/photo-1545235616-db3cd822ad8c",
+  "credit": "Daniel Korpai",
+  "alt": "smartphone on wireless charging case at 83 percent charge"
+ },
+ "stand3in1": {
+  "url": "https://images.unsplash.com/photo-1649030612217-05ce00752236",
+  "credit": "Jass (akajassd) Hernandez",
+  "alt": "a couple of smart watches sitting on top of a table"
+ },
+ "itemtracker": {
+  "url": "https://images.unsplash.com/photo-1643804926339-e94f0a655185",
+  "credit": "Filip Szalbot",
+  "alt": "a bunch of keys sitting on top of a wooden table"
+ },
+ "magpack": {
+  "url": "https://images.unsplash.com/photo-1635861321688-b63d28749a82",
+  "credit": "Reka Sarudi",
+  "alt": "a person holding a cell phone and a charger"
+ },
+ "adapter": {
+  "url": "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48",
+  "credit": "Clint Patterson",
+  "alt": "black male plug in front of electric socket"
+ },
+ "toothbrush": {
+  "url": "https://images.unsplash.com/photo-1641130331708-dd0cc94ae8e5",
+  "credit": "Cosmin Ursea",
+  "alt": "an electric toothbrush sitting on top of a green case"
+ },
+ "flosser": {
+  "url": "https://images.unsplash.com/photo-1714399417136-d328f3ea14c7",
+  "credit": "Clay Banks",
+  "alt": "a bathroom sink with a soap dispenser next to it"
+ },
+ "trimmer": {
+  "url": "https://images.unsplash.com/photo-1621605815971-fbc98d665033",
+  "credit": "Andrea Donato",
+  "alt": "Two hair clippers, scissors, a comb, and grooming products on a slate board"
+ },
+ "dryerbrush": {
+  "url": "https://images.unsplash.com/photo-1727364438136-6edc10ef0a52",
+  "credit": "Shubham Dhage",
+  "alt": "A black hair dryer with a red light on it"
+ },
+ "instantcam": {
+  "url": "https://images.unsplash.com/photo-1516962126636-27ad087061cc",
+  "credit": "Yoann Siloine",
+  "alt": "black Polaroid camera with white background"
+ },
+ "umbrella": {
+  "url": "https://images.unsplash.com/photo-1516368694098-47836cebec97",
+  "credit": "Aline de Nadai",
+  "alt": "woman holding red umbrella standing near tree at daytime"
+ },
+ "wallet": {
+  "url": "https://images.unsplash.com/photo-1613243555988-441166d4d6fd",
+  "credit": "Markus Winkler",
+  "alt": "A black business credit card with a chip on a white background"
+ },
+ "backpack": {
+  "url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
+  "credit": "Sun Lingyan",
+  "alt": "A black backpack with a small yellow logo on a white floor"
+ },
+ "coolpillow": {
+  "url": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2",
+  "credit": "Jude Infantini",
+  "alt": "white pillow on white bed"
+ },
+ "silkcase": {
+  "url": "https://images.unsplash.com/photo-1629949009765-40fc74c9ec21",
+  "credit": "Mediamodifier",
+  "alt": "white throw pillow on gray sofa"
+ },
+ "blackout": {
+  "url": "https://images.unsplash.com/photo-1613685703237-6628de38ddb7",
+  "credit": "Collov Home Design",
+  "alt": "white bed near white window blinds"
+ },
+ "sleepmask": {
+  "url": "https://images.unsplash.com/photo-1666934209818-cd6a6d08bd8d",
+  "credit": "Dmitry Ganin",
+  "alt": "a woman lying in a bed"
+ },
+ "whitenoise": {
+  "url": "https://images.unsplash.com/photo-1517862774645-dd398fbfaffa",
+  "credit": "Calum Lewis",
+  "alt": "table lamp on top of nightstand"
+ },
+ "topper": {
+  "url": "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8",
+  "credit": "Francesca Tosolini",
+  "alt": "A bedroom with dark grey walls, a large bed, and a floral area rug"
+ },
+ "sheets": {
+  "url": "https://images.unsplash.com/photo-1634665810235-011d663754e7",
+  "credit": "Kateryna Hliznitsova",
+  "alt": "a close up of a bed with a white sheet"
+ },
+ "bedsidelamp": {
+  "url": "https://images.unsplash.com/photo-1713623633904-a0a8dca6fafc",
+  "credit": "Clay Banks",
+  "alt": "a bedroom with a bed and a nightstand with a lamp on it"
+ },
+ "humidifier": {
+  "url": "https://images.unsplash.com/photo-1768471569643-717e823b5f9a",
+  "credit": "zeliang xiao",
+  "alt": "A white humidifier emits mist on a wooden desk"
+ },
+ "heatedthrow": {
+  "url": "https://images.unsplash.com/photo-1674475760738-8c7af859f821",
+  "credit": "Bearaby",
+  "alt": "a couch with a blanket on top of it"
+ },
+ "underbed": {
+  "url": "https://images.unsplash.com/photo-1700165644892-3dd6b67b25bc",
+  "credit": "Luke Heibert",
+  "alt": "a lot of brown boxes that are open"
+ },
+ "mirror": {
+  "url": "https://images.unsplash.com/photo-1556020685-ae41abfc9365",
+  "credit": "Minh Pham",
+  "alt": "white wooden dresser with mirror"
+ },
+ "towerfan": {
+  "url": "https://images.unsplash.com/photo-1607835498554-2c5519af1730",
+  "credit": "Andrew George",
+  "alt": "white wall fan turned on near white window blinds"
+ },
+ "caddy": {
+  "url": "https://images.unsplash.com/photo-1570676765227-b25aa08d9752",
+  "credit": "Tim Wildsmith",
+  "alt": "stack of assorted-title books beside snake plants"
+ },
+ "sleepband": {
+  "url": "https://images.unsplash.com/photo-1576954224794-3d292e771304",
+  "credit": "Rosa Rafael",
+  "alt": "woman sleeping on the bed"
+ },
+ "diffuser2": {
+  "url": "https://images.unsplash.com/photo-1623826538345-192361e2d4cd",
+  "credit": "Tron Le",
+  "alt": "person holding black and white labeled bottle"
+ },
+ "sconce": {
+  "url": "https://images.unsplash.com/photo-1567459045800-4d77c81fc3f5",
+  "credit": "Jon Tyson",
+  "alt": "black and gold sconce"
+ },
+ "hamper": {
+  "url": "https://images.unsplash.com/photo-1582735689369-4fe89db7114c",
+  "credit": "Annie Spratt",
+  "alt": "white textile on blue plastic laundry basket"
+ },
+ "widelegs": {
+  "url": "https://images.unsplash.com/photo-1580651214613-f4692d6d138f",
+  "credit": "Vladimir Fedotov",
+  "alt": "woman in white long sleeve shirt and blue pants"
+ },
+ "midiskirt": {
+  "url": "https://images.unsplash.com/photo-1708363390932-15e8a29c0f56",
+  "credit": "Liviu Boldis",
+  "alt": "a woman in a white shirt and black skirt"
+ },
+ "cardigan": {
+  "url": "https://images.unsplash.com/photo-1683315565563-f72590773805",
+  "credit": "Priscilla Luna Riguera",
+  "alt": "a pair of sunglasses and a sweater on a white surface"
+ },
+ "blazer": {
+  "url": "https://images.unsplash.com/photo-1616715623022-65d18f0042ae",
+  "credit": "Daniel Dalea",
+  "alt": "woman in gray and white polka dot blazer standing and smiling"
+ },
+ "crossbody": {
+  "url": "https://images.unsplash.com/photo-1605733513597-a8f8341084e6",
+  "credit": "mostafa mahmoudi",
+  "alt": "A grey leather satchel with gold buckles on a white surface"
+ },
+ "hoops": {
+  "url": "https://images.unsplash.com/photo-1671644730555-916aa8d8157f",
+  "credit": "Ruan Richard Rodrigues",
+  "alt": "a close up of a person wearing a pair of earrings"
+ },
+ "tanks": {
+  "url": "https://images.unsplash.com/photo-1765560216839-a7d945dd6a4b",
+  "credit": "Michael Kyule",
+  "alt": "Young woman in white tank top and denim overalls"
+ },
+ "straightjeans": {
+  "url": "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab",
+  "credit": "Jason Leung",
+  "alt": "blue denim jeans on brown clothes hanger"
+ },
+ "flats": {
+  "url": "https://images.unsplash.com/photo-1682987228796-cdc66c167dcd",
+  "credit": "Haley Parson",
+  "alt": "a pair of ballet shoes sitting on top of a wooden floor"
+ },
+ "wchelsea": {
+  "url": "https://images.unsplash.com/photo-1608629601270-a0007becead3",
+  "credit": "Noah Smith",
+  "alt": "brown and white suede boots"
+ },
+ "woolcoat": {
+  "url": "https://images.unsplash.com/photo-1678700266327-8959be9622fd",
+  "credit": "Richard Stachmann",
+  "alt": "a woman in a tan coat and sunglasses"
+ },
+ "silkscarf": {
+  "url": "https://images.unsplash.com/photo-1517472292914-9570a594783b",
+  "credit": "Roberto Lopez",
+  "alt": "assorted-color textile lot"
+ },
+ "leggings": {
+  "url": "https://images.unsplash.com/photo-1600696491085-19dbbeb4f8c1",
+  "credit": "Michael B. Luong",
+  "alt": "woman in black tank top and gray leggings"
+ },
+ "pufferv": {
+  "url": "https://images.unsplash.com/photo-1636529109797-0749811c4916",
+  "credit": "Mina Rad",
+  "alt": "a woman wearing a black and white jacket and hat"
+ },
+ "slipdress": {
+  "url": "https://images.unsplash.com/photo-1594739033447-80ab21e24b4c",
+  "credit": "Alexander Jawfox",
+  "alt": "woman in black spaghetti strap dress"
+ },
+ "cateye": {
+  "url": "https://images.unsplash.com/photo-1760446031524-79586718421d",
+  "credit": "ZEELOOL Glasses",
+  "alt": "Stylish sunglasses resting on a sandy beach with shells"
+ },
+ "linenshirt": {
+  "url": "https://images.unsplash.com/photo-1713881842156-3d9ef36418cc",
+  "credit": "tian dayong",
+  "alt": "a blue shirt hanging on a clothes line"
+ },
+ "oxford": {
+  "url": "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176",
+  "credit": "Mahdi Bafande",
+  "alt": "man in white dress shirt wearing black sunglasses"
+ },
+ "chinos": {
+  "url": "https://images.unsplash.com/photo-1584865288642-42078afe6942",
+  "credit": "Santhosh Vaithiyanathan",
+  "alt": "man in white t-shirt and black pants standing on white floor"
+ },
+ "merino": {
+  "url": "https://images.unsplash.com/photo-1553924143-df6148963396",
+  "credit": "Siavash Ghanbari",
+  "alt": "man wearing black and white knit sweater during daytime"
+ },
+ "fieldjacket": {
+  "url": "https://images.unsplash.com/photo-1675877879221-871aa9f7c314",
+  "credit": "Mohamad Khosravi",
+  "alt": "a man with a beard wearing a black leather jacket"
+ },
+ "denimjacket": {
+  "url": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7",
+  "credit": "Caio Coelho",
+  "alt": "blue denim button up jacket"
+ },
+ "tees": {
+  "url": "https://images.unsplash.com/photo-1581655353564-df123a1eb820",
+  "credit": "Haryo Setyadi",
+  "alt": "white crew neck t-shirt"
+ },
+ "belt": {
+  "url": "https://images.unsplash.com/photo-1664286074176-5206ee5dc878",
+  "credit": "seeetz",
+  "alt": "a leather belt on a black surface"
+ },
+ "mchelsea": {
+  "url": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f",
+  "credit": "Zac Wolff",
+  "alt": "brown leather lace up boots"
+ },
+ "mjeans": {
+  "url": "https://images.unsplash.com/photo-1714143136372-ddaf8b606da7",
+  "credit": "TuanAnh Blue",
+  "alt": "a pair of blue jeans on a white background"
+ },
+ "hoodie": {
+  "url": "https://images.unsplash.com/photo-1596075780750-81249df16d19",
+  "credit": "Mark Farías",
+  "alt": "man in black hoodie standing"
+ },
+ "puffer": {
+  "url": "https://images.unsplash.com/photo-1557418669-db3f781a58c0",
+  "credit": "Benjamin Szabo",
+  "alt": "man wearing black The North Face bubble jacket"
+ },
+ "runners": {
+  "url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+  "credit": "Ryan Waring",
+  "alt": "unpaired red Nike sneaker"
+ },
+ "msunglasses": {
+  "url": "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
+  "credit": "Giorgio Trovato",
+  "alt": "shallow focus photo of black Ray-Ban wayfarer sunglasses"
+ },
+ "beanie": {
+  "url": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9",
+  "credit": "Fábio  Alves",
+  "alt": "assorted-color knitted hat lot"
+ },
+ "socks": {
+  "url": "https://images.unsplash.com/photo-1585499583264-491df5142e83",
+  "credit": "Nick Page",
+  "alt": "blue white and yellow socks"
+ },
+ "duffel": {
+  "url": "https://images.unsplash.com/photo-1781514041306-489a8d346265",
+  "credit": "Anton Tseiko",
+  "alt": "A brown bag sits on stone steps outside a building"
+ },
+ "polo": {
+  "url": "https://images.unsplash.com/photo-1625910513413-c23b8bb81cba",
+  "credit": "Clément Vatte",
+  "alt": "black under armour polo shirt"
+ },
+ "joggers": {
+  "url": "https://images.unsplash.com/photo-1790009719826-323bcdbe2863",
+  "credit": "Stefan Vibes",
+  "alt": "A man in a cream fleece jacket and grey sweatpants on a paved walkway"
+ },
+ "chair": {
+  "url": "https://images.unsplash.com/photo-1612372606404-0ab33e7187ee",
+  "credit": "Kelly Sikkema",
+  "alt": "brown and black rolling chair beside green plant"
+ },
+ "lightbar": {
+  "url": "https://images.unsplash.com/photo-1708513427809-728a7913fc9f",
+  "credit": "Uwukuri Emery",
+  "alt": "a desk with a monitor and a lamp on it"
+ },
+ "laptopstand": {
+  "url": "https://images.unsplash.com/photo-1641057350568-babe1e84aedf",
+  "credit": "Workperch",
+  "alt": "a laptop computer sitting on top of a wooden desk"
+ },
+ "vmouse": {
+  "url": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf",
+  "credit": "Luca Bravo",
+  "alt": "Apple MacBook beside computer mouse on table"
+ },
+ "deskmat": {
+  "url": "https://images.unsplash.com/photo-1584727151652-d09b17ebf23f",
+  "credit": "Jessica Lam",
+  "alt": "black computer keyboard on brown wooden table"
+ },
+ "dock": {
+  "url": "https://images.unsplash.com/photo-1763161786687-43d0c9babdf0",
+  "credit": "Gavin Phillips",
+  "alt": "Black baseus 70w gan travel adapter"
+ },
+ "monitor": {
+  "url": "https://images.unsplash.com/photo-1587831990711-23ca6441447b",
+  "credit": "Sebastian Bednarek",
+  "alt": "A computer monitor, keyboard, and game controllers on a white desk in a workspace"
+ },
+ "headset": {
+  "url": "https://images.unsplash.com/photo-1548378329-437e1ef34263",
+  "credit": "Michael Soledad",
+  "alt": "black Sony headphones hung on stand near Apple Magic Keyboard and Mouse"
+ },
+ "monitorarm": {
+  "url": "https://images.unsplash.com/photo-1613413561312-e329d024ed65",
+  "credit": "Lasse Jensen",
+  "alt": "black flat screen computer monitor on brown wooden desk"
+ },
+ "footrest": {
+  "url": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd",
+  "credit": "James McDonald",
+  "alt": "gray leather office rolling armchair beside white wooden computer desk"
+ },
+ "cabletray": {
+  "url": "https://images.unsplash.com/photo-1760348213270-7cd00b8c3405",
+  "credit": "Bedirhan Gül",
+  "alt": "Cable organizer holding coiled white cord under desk"
+ },
+ "kbcombo": {
+  "url": "https://images.unsplash.com/photo-1585314614250-d213876625e1",
+  "credit": "Sebastian Banasiewcz",
+  "alt": "black logitech keyboard on orange surface"
+ },
+ "whiteboard": {
+  "url": "https://images.unsplash.com/photo-1676276374803-36e48196d5ac",
+  "credit": "Walls.io",
+  "alt": "a white board with a bunch of stickers on it"
+ },
+ "drawerorg": {
+  "url": "https://images.unsplash.com/photo-1678108040468-0cc9addd984d",
+  "credit": "Orgalux",
+  "alt": "a drawer filled with different types of utensils"
+ },
+ "standmat": {
+  "url": "https://images.unsplash.com/photo-1622131278701-eb225474ffd2",
+  "credit": "TheStandingDesk",
+  "alt": "man in pink dress shirt and blue denim jeans standing beside brown wooden table"
+ },
+ "smartmug": {
+  "url": "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc",
+  "credit": "ian dooley",
+  "alt": "cup of coffee near MacBook Pro"
+ },
+ "printer": {
+  "url": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6",
+  "credit": "Mahrous Houses",
+  "alt": "white and gray hp all in one printer"
+ },
+ "station": {
+  "url": "https://images.unsplash.com/photo-1679274649031-25abf5383d57",
+  "credit": "Zendure Power Station",
+  "alt": "a portable generator in a field of solar panels"
+ },
+ "solarpanel": {
+  "url": "https://images.unsplash.com/photo-1680050973254-450bf851e2a1",
+  "credit": "Newpowa",
+  "alt": "a solar panel laying on the ground in a garden"
+ },
+ "crankradio": {
+  "url": "https://images.unsplash.com/photo-1556009148-ed88760014c4",
+  "credit": "Naadir Shahul",
+  "alt": "beige and black radio"
+ },
+ "headlamp": {
+  "url": "https://images.unsplash.com/photo-1788206857337-a6c63eafdacd",
+  "credit": "Marek Piwnicki",
+  "alt": "A person with a red headlamp and backpack on a mountain ridge at night"
+ },
+ "flashlight": {
+  "url": "https://images.unsplash.com/photo-1685342654383-584d56907425",
+  "credit": "Tawseem Hakak",
+  "alt": "a flashlight sitting on the floor of a room"
+ },
+ "batteryfan": {
+  "url": "https://images.unsplash.com/photo-1565151443833-29bf2ba5dd8d",
+  "credit": "Ronan Furuta",
+  "alt": "white desk fan"
+ },
+ "stickonlights": {
+  "url": "https://images.unsplash.com/photo-1708397016786-8916880649b8",
+  "credit": "Aswa Hanifah",
+  "alt": "a walk - in closet with shelves, drawers, and a suitcase"
+ },
+ "laptopbank": {
+  "url": "https://images.unsplash.com/photo-1632156752206-f6dac15dd37d",
+  "credit": "Robert Torres",
+  "alt": "a close up of a cell phone with a charger plugged in"
+ },
+ "jumpstarter": {
+  "url": "https://images.unsplash.com/photo-1677230017860-a8cc67785f0a",
+  "credit": "Sincerely Media",
+  "alt": "a close up of a car's battery and wires"
+ },
+ "rechargeables": {
+  "url": "https://images.unsplash.com/photo-1576834975354-ee694be1f0d1",
+  "credit": "Claudio Schwarz",
+  "alt": "four Duracell batteries"
+ },
+ "cooler": {
+  "url": "https://images.unsplash.com/photo-1550720295-a59523cb8872",
+  "credit": "Sandrene Zhang",
+  "alt": "white cooler box on brown concrete pavement near body of water"
+ },
+ "stove": {
+  "url": "https://images.unsplash.com/photo-1522041350204-22285237eeca",
+  "credit": "Sage Friedman",
+  "alt": "selective focus of blue and gray camping gas burner and cooking pan on cliff"
+ },
+ "waterjug": {
+  "url": "https://images.unsplash.com/photo-1564919415179-752ca9dadcdf",
+  "credit": "Ikhsan Sugiarto",
+  "alt": "man pouring water in glass"
+ },
+ "surge": {
+  "url": "https://images.unsplash.com/photo-1781331534854-c75885f01c01",
+  "credit": "Babak Eshaghian",
+  "alt": "White power strip with plugs on a wooden floor"
+ },
+ "miniups": {
+  "url": "https://images.unsplash.com/photo-1516044734145-07ca8eef8731",
+  "credit": "Misha Feshchak",
+  "alt": "white and black modem router with four lights"
+ },
+ "firstaid": {
+  "url": "https://images.unsplash.com/photo-1624638760852-8ede1666ab07",
+  "credit": "Mathurin NAPOLY / matnapo",
+  "alt": "An open red medical bag filled with various supplies on a grey surface"
+ },
+ "pucklights": {
+  "url": "https://images.unsplash.com/photo-1752040697741-632ee6a6d198",
+  "credit": "David Kristianto",
+  "alt": "Shelves of home decor items with warm lighting"
+ },
+ "thermalblanket": {
+  "url": "https://images.unsplash.com/photo-1537905569824-f89f14cceb68",
+  "credit": "Josh Hild",
+  "alt": "brown dome tent near trees at night"
+ },
+ "soapdispenser": {
+  "url": "https://images.unsplash.com/photo-1645567455251-334ed4702f9b",
+  "credit": "Steven Ungermann",
+  "alt": "a bathroom sink with a soap dispenser and a soap dish"
+ },
+ "handvac": {
+  "url": "https://images.unsplash.com/photo-1765970101531-8d116223af49",
+  "credit": "Dreame Vacuum Cleaner",
+  "alt": "A dog rests near a vacuum cleaner on the floor"
+ },
+ "airfryer": {
+  "url": "https://images.unsplash.com/photo-1774074645537-f72f70d40d12",
+  "credit": "Paras Kapoor",
+  "alt": "Golden french fries cooking in a metal basket"
+ },
+ "wineopener": {
+  "url": "https://images.unsplash.com/photo-1690145486157-6dc44a768710",
+  "credit": "Jonathan Kemper",
+  "alt": "a person holding a wine bottle with a corkscrew attached to it"
+ },
+ "frother": {
+  "url": "https://images.unsplash.com/photo-1514066558159-fc8c737ef259",
+  "credit": "Nathan Dumlao",
+  "alt": "man pouring milk in coffee"
+ },
+ "petfeeder": {
+  "url": "https://images.unsplash.com/photo-1764576504536-dbdfa4cb1d9a",
+  "credit": "Javier Garcia Chavez",
+  "alt": "Orange cat eating dry food from a bowl"
+ },
+ "spinscrubber": {
+  "url": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14",
+  "credit": "Phil Hearing",
+  "alt": "A white bathroom with a pedestal sink, toilet, and potted plants on a checkered floor"
+ },
+ "fabricshaver": {
+  "url": "https://images.unsplash.com/photo-1631541909061-71e349d1f203",
+  "credit": "Toa Heftiba",
+  "alt": "a sweater hanging on a hook in a room"
+ },
+ "airduster": {
+  "url": "https://images.unsplash.com/photo-1627905646269-7f034dcc5738",
+  "credit": "Towfiqu barbhuiya",
+  "alt": "Hands in blue gloves cleaning a dark desk with a spray bottle and cloth"
+ },
+ "eggcooker": {
+  "url": "https://images.unsplash.com/photo-1617611647086-bccca8c2cf84",
+  "credit": "Mustafa Bashari",
+  "alt": "white egg lot on brown wooden table"
+ },
+ "dishrack": {
+  "url": "https://images.unsplash.com/photo-1771627278637-10eb2e9857b5",
+  "credit": "Zahraa Hassan",
+  "alt": "A kitchen sink with dishes drying"
+ },
+ "sensorbin": {
+  "url": "https://images.unsplash.com/photo-1511189330313-b0af599a6f5a",
+  "credit": "charlesdeluvio",
+  "alt": "two trash cans inside dark room"
+ },
+ "canopener": {
+  "url": "https://images.unsplash.com/photo-1738618140037-09e11c8e644a",
+  "credit": "Jacob McGowin",
+  "alt": "A pile of cans of food sitting next to each other"
+ },
+ "coffeemaker": {
+  "url": "https://images.unsplash.com/photo-1608354580875-30bd4168b351",
+  "credit": "Nathan Dumlao",
+  "alt": "black and silver coffee maker"
+ },
+ "slowcooker": {
+  "url": "https://images.unsplash.com/photo-1664741662725-bd131742b7b7",
+  "credit": "Laura Ohlman",
+  "alt": "a bowl of food"
+ },
+ "lazysusan": {
+  "url": "https://images.unsplash.com/photo-1645567454567-901dc409551b",
+  "credit": "Steven Ungermann",
+  "alt": "a row of jars filled with different types of food"
+ },
+ "blender": {
+  "url": "https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e",
+  "credit": "Sara Julie",
+  "alt": "A purple smoothie in a glass jar with floating strawberries, bananas, and blackberries"
+ },
+ "skeleton": {
+  "url": "https://images.unsplash.com/photo-1509557965875-b88c97052f0e",
+  "credit": "Quilia",
+  "alt": "two skeleton near white concrete building with string lights at daytime"
+ },
+ "makeupkit": {
+  "url": "https://images.unsplash.com/photo-1609785918985-0a077bac81b7",
+  "credit": "Farzin Yarahmadi",
+  "alt": "man in black crew neck shirt with white and red face mask"
+ },
+ "cobwebs": {
+  "url": "https://images.unsplash.com/photo-1604149370100-2cf3be3bc845",
+  "credit": "Rafael Garcin",
+  "alt": "spider web in close up photography"
+ },
+ "kidscostume": {
+  "url": "https://images.unsplash.com/photo-1540593267750-76cd145d8724",
+  "credit": "Paige Cody",
+  "alt": "girl wearing black witch costume holding brown plant"
+ },
+ "carvingkit": {
+  "url": "https://images.unsplash.com/photo-1663568399694-fa3ee4fbb972",
+  "credit": "Daniel Lincoln",
+  "alt": "a pumpkin on the ground"
+ },
+ "tablecloth": {
+  "url": "https://images.unsplash.com/photo-1601118964938-228a89955311",
+  "credit": "krakenimages",
+  "alt": "A group of people toasting with red wine glasses over a festive dinner table"
+ },
+ "roastingpan": {
+  "url": "https://images.unsplash.com/photo-1606728035253-49e8a23146de",
+  "credit": "Claudio Schwarz",
+  "alt": "roasted chicken on white ceramic plate"
+ },
+ "thermometer": {
+  "url": "https://images.unsplash.com/photo-1508615263227-c5d58c1e5821",
+  "credit": "Paul Hermann",
+  "alt": "gray metal tong and grilled meat with fire"
+ },
+ "wreath": {
+  "url": "https://images.unsplash.com/photo-1545230304-c353bf3eae33",
+  "credit": "LuAnn Hunt",
+  "alt": "green and red floral wreath"
+ },
+ "napkins": {
+  "url": "https://images.unsplash.com/photo-1596433904500-97b901c5d274",
+  "credit": "Svitlana",
+  "alt": "white textile on brown wooden table"
+ },
+ "xmaslights": {
+  "url": "https://images.unsplash.com/photo-1612979168796-bcae1575b8c5",
+  "credit": "Morgane Le Breton",
+  "alt": "green christmas tree with string lights"
+ },
+ "advent": {
+  "url": "https://images.unsplash.com/photo-1742137744885-efea7b4cf685",
+  "credit": "pure julia",
+  "alt": "An advent calendar with many little surprises inside"
+ },
+ "stockings": {
+  "url": "https://images.unsplash.com/photo-1670041631141-8c48f97dd52e",
+  "credit": "Mike Cox",
+  "alt": "a christmas tree with a red and white cloth from it"
+ },
+ "sequintop": {
+  "url": "https://images.unsplash.com/photo-1646176385724-6e1c83da6198",
+  "credit": "Julia Morales",
+  "alt": "a close up of a purple sequinized surface"
+ },
+ "flutes": {
+  "url": "https://images.unsplash.com/photo-1580657274234-7339717f4541",
+  "credit": "Alexander Naglestad",
+  "alt": "Champagne pouring from a bottle into a group of flutes on a tray"
+ },
+ "steamer": {
+  "url": "https://images.unsplash.com/photo-1732605556119-cefb5faaf313",
+  "credit": "Neakasa",
+  "alt": "A woman is holding a dryer and ironing clothes"
+ },
+ "xmastree": {
+  "url": "https://images.unsplash.com/photo-1607882602950-622c80fff04d",
+  "credit": "Frames For Your Heart",
+  "alt": "green christmas tree with baubles"
+ },
+ "giftwrap": {
+  "url": "https://images.unsplash.com/photo-1513885535751-8b9238bd345a",
+  "credit": "freestocks",
+  "alt": "gift boxes"
+ },
+ "xmassweater": {
+  "url": "https://images.unsplash.com/photo-1543652437-1c165dbfb282",
+  "credit": "Sincerely Media",
+  "alt": "round white ceramic mug with coffee beverage inside on top of red and white polka dot knitted sweater"
+ }
+}
