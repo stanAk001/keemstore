@@ -205,7 +205,7 @@ const EMPTY = {
   name: '', slug: '', brand: '', short_description: '', description: '', category_id: null, subcategory_id: null,
   amazon_url: '', affiliate_url: '', asin: '', current_price: '', price_display: '', price_source: '', price_checked_at: null,
   rating: '', review_count: '', rating_source: '', rating_checked_at: null, pros: [], cons: [], best_for: '', not_for: '',
-  editor_note: '', tags: [], placement: 'editorial', featured: false, active: true, is_demo: false, images: [], affiliate_links: [],
+  gift_note: '', gift_rank: '', editor_note: '', tags: [], placement: 'editorial', featured: false, active: true, is_demo: false, images: [], affiliate_links: [],
 };
 
 const toForm = (p) => ({
@@ -290,6 +290,8 @@ export function ProductEditor() {
             <div className="grid gap-4 md:grid-cols-2">
               <TextArea label="Best for (who should buy it)" value={form.best_for} onChange={set('best_for')} rows={2} />
               <TextArea label="Not for (who should skip it)" value={form.not_for} onChange={set('not_for')} rows={2} />
+              <TextArea label="Gift note" hint="Shown on gift pages, e.g. “For the friend who hates winter mornings.” Add a gift tag (for-her, for-him…) to list it in the gift guide." value={form.gift_note} onChange={set('gift_note')} rows={2} />
+              <TextInput label="Gift guide position" type="number" min={1} hint="1 shows first in its gift section. Leave empty to list after the ranked picks." value={form.gift_rank} onChange={set('gift_rank')} />
               <ListInput label="Pros" value={form.pros} onChange={set('pros')} />
               <ListInput label="Cons / worth knowing" value={form.cons} onChange={set('cons')} />
               <TextArea className="md:col-span-2" label="Editor's note" value={form.editor_note} onChange={set('editor_note')} rows={2} />

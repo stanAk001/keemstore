@@ -1,7 +1,7 @@
 import { many, one, query, transaction } from '../config/db.js';
 import { buildInsert, buildUpdate } from '../utils/sql.js';
 
-const WRITABLE = ['name', 'slug', 'parent_id', 'description', 'intro', 'image_url', 'image_alt', 'seo', 'featured', 'active', 'sort_order'];
+const WRITABLE = ['name', 'slug', 'parent_id', 'description', 'intro', 'image_url', 'image_alt', 'seo', 'layout', 'featured', 'active', 'sort_order'];
 const JSON_COLS = ['seo'];
 
 const SELECT = `

@@ -14,7 +14,7 @@ import { ImageField } from '../components/MediaPicker.jsx';
 import { SeoFields } from '../components/MetaFields.jsx';
 import { CategorySelect } from '../components/Pickers.jsx';
 
-const EMPTY = { name: '', slug: '', parent_id: null, description: '', intro: '', image_url: '', image_alt: '', seo: {}, featured: false, active: true };
+const EMPTY = { name: '', slug: '', parent_id: null, description: '', intro: '', image_url: '', image_alt: '', seo: {}, layout: 'grid', featured: false, active: true };
 
 export default function Categories() {
   const { data, error, loading, reload } = useAdminData('/admin/categories');
@@ -96,6 +96,10 @@ export default function Categories() {
               <ImageField label="Image" value={editing.image_url} onChange={(v) => setEditing((e) => ({ ...e, image_url: v }))} alt={editing.image_alt} onAltChange={(v) => setEditing((e) => ({ ...e, image_alt: v }))} />
               <Toggle label="Active" checked={editing.active} onChange={(v) => setEditing((e) => ({ ...e, active: v }))} />
               <Toggle label="Featured" hint="Shown in featured category sections." checked={editing.featured} onChange={(v) => setEditing((e) => ({ ...e, featured: v }))} />
+              {!editing.parent_id && (
+                <Toggle label="Guide layout" hint="Show one curated section per subcategory (like the Gifts guide) instead of a single grid."
+                  checked={editing.layout === 'guide'} onChange={(v) => setEditing((e) => ({ ...e, layout: v ? 'guide' : 'grid' }))} />
+              )}
             </div>
             <SeoFields value={editing.seo} onChange={(v) => setEditing((e) => ({ ...e, seo: v }))} fallbackTitle={editing.name} fallbackDescription={editing.description} path={editing.path || `/${editing.slug}`} />
           </div>

@@ -30,6 +30,12 @@ export async function byPath(req, res) {
   const productScope = sub ? [sub.id] : scopeIds;
 
   const pg = paginate(req.query, { defaultLimit: 24, maxLimit: 60 });
+  let parent = null;
+  if (category.parent_id) parent = await Categories.getCategory(category.parent_id);
+  // Gift guide pages lead with their curated picks unless the visitor picks a sort.
+  const giftGuide = category.layout === 'guide' || parent?.layout === 'guide';
+  const sort = req.query.sort || (giftGuide ? 'gift' : undefined);
+
   const [products, facets, guides, trends] = await Promise.all([
     findProducts({
       categoryIds: productScope,
@@ -38,7 +44,7 @@ export async function byPath(req, res) {
       minPrice: req.query.min_price,
       maxPrice: req.query.max_price,
       featured: req.query.featured === 'true',
-      sort: req.query.sort,
+      sort,
       limit: pg.limit,
       offset: pg.offset,
     }),
@@ -47,13 +53,21 @@ export async function byPath(req, res) {
     listTrends({ limit: 50 }),
   ]);
 
-  let parent = null;
-  if (category.parent_id) parent = await Categories.getCategory(category.parent_id);
+  // Guide layout: the unfiltered first page shows one curated section per
+  // subcategory (e.g. Gifts → For Her, For Him…). Filters fall back to the grid.
+  const filtered = ['sub', 'brand', 'tag', 'min_price', 'max_price', 'featured', 'sort', 'view'].some((k) => req.query[k]) || pg.offset > 0;
+  const sections = category.layout === 'guide' && children.length && !filtered
+    ? await Promise.all(children.map(async (child) => ({
+      category: child,
+      products: (await findProducts({ categoryIds: [child.id], sort: 'gift', limit: 8 })).items,
+    })))
+    : null;
 
   res.json({
     category,
-    parent: parent && { id: parent.id, name: parent.name, slug: parent.slug, path: parent.path },
+    parent: parent && { id: parent.id, name: parent.name, slug: parent.slug, path: parent.path, layout: parent.layout },
     children,
+    sections: sections?.filter((s) => s.products.length) ?? null,
     products: { items: products.items, ...pageMeta(products.total, pg) },
     facets,
     guides: guides.items,

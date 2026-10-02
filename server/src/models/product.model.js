@@ -7,7 +7,7 @@ const WRITABLE = [
   'name', 'slug', 'brand', 'short_description', 'description', 'category_id', 'subcategory_id',
   'amazon_url', 'affiliate_url', 'asin', 'current_price', 'price_display', 'price_source',
   'price_checked_at', 'rating', 'review_count', 'rating_source', 'rating_checked_at', 'pros', 'cons',
-  'best_for', 'not_for', 'editor_note', 'tags', 'placement', 'featured', 'active', 'is_demo',
+  'best_for', 'not_for', 'gift_note', 'gift_rank', 'editor_note', 'tags', 'placement', 'featured', 'active', 'is_demo',
 ];
 const JSON_COLS = ['pros', 'cons'];
 
@@ -15,7 +15,7 @@ const SELECT = `
   select p.id, p.name, p.slug, p.brand, p.short_description, p.description, p.category_id,
          p.subcategory_id, p.amazon_url, p.affiliate_url, p.asin, p.current_price, p.price_display,
          p.price_source, p.price_checked_at, p.rating, p.review_count, p.rating_source,
-         p.rating_checked_at, p.pros, p.cons, p.best_for, p.not_for, p.editor_note, p.tags,
+         p.rating_checked_at, p.pros, p.cons, p.best_for, p.not_for, p.gift_note, p.gift_rank, p.editor_note, p.tags,
          p.placement, p.featured, p.active, p.is_demo, p.created_at, p.updated_at,
          c.name as category_name, c.slug as category_slug, cp.slug as category_parent_slug,
          sc.name as subcategory_name, sc.slug as subcategory_slug,
@@ -64,6 +64,7 @@ async function present(rows, { admin = false } = {}) {
 
 export const SORTS = {
   featured: 'p.featured desc, p.updated_at desc',
+  gift: 'p.gift_rank asc nulls last, p.featured desc, p.updated_at desc',
   newest: 'p.created_at desc',
   price_asc: 'p.current_price asc nulls last, p.id',
   price_desc: 'p.current_price desc nulls last, p.id',

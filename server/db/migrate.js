@@ -1,9 +1,11 @@
-// Minimal forward-only SQL migration runner.
+// Minimal forward-only migration runner.
 //   node db/migrate.js          apply pending migrations
 //   node db/migrate.js --reset  drop everything in `public` first (development only)
+// Migrations are .sql files, or .js modules exporting `up(client)` for content
+// changes that are easier to express in code. Both run in one transaction each.
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { pool } from '../src/config/db.js';
 import { env } from '../src/config/env.js';
 
@@ -22,15 +24,16 @@ async function run() {
     name text primary key, applied_at timestamptz not null default now())`);
 
   const applied = new Set((await pool.query('select name from schema_migrations')).rows.map((r) => r.name));
-  const files = (await fs.readdir(dir)).filter((f) => f.endsWith('.sql')).sort();
+  const files = (await fs.readdir(dir)).filter((f) => f.endsWith('.sql') || f.endsWith('.js')).sort();
 
   for (const file of files) {
     if (applied.has(file)) continue;
-    const sql = await fs.readFile(path.join(dir, file), 'utf8');
+    const full = path.join(dir, file);
     const client = await pool.connect();
     try {
       await client.query('begin');
-      await client.query(sql);
+      if (file.endsWith('.js')) await (await import(pathToFileURL(full).href)).up(client);
+      else await client.query(await fs.readFile(full, 'utf8'));
       await client.query('insert into schema_migrations (name) values ($1)', [file]);
       await client.query('commit');
       console.log(`[migrate] applied ${file}`);

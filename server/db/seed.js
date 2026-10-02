@@ -7,6 +7,7 @@ import { pool, transaction } from '../src/config/db.js';
 import { env } from '../src/config/env.js';
 import * as D from './seeds/data.js';
 import { seedCatalog } from './seed-catalog.js';
+import { up as giftGuide } from './migrations/005_gift_guide_content.js';
 
 async function seedAdmin(client) {
   if (!env.adminEmail || !env.adminPassword) {
@@ -261,6 +262,9 @@ async function run() {
     await seedContent(client);
     const { added } = await seedCatalog(client);
     console.log(`[seed] starter catalog: ${added} products`);
+    // Content migrations ran before this content existed; apply them now.
+    await giftGuide(client);
+    console.log('[seed] gift guide applied');
   });
 }
 

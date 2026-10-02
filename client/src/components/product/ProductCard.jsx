@@ -8,10 +8,14 @@ import { trackEvent } from '../../lib/track.js';
 /**
  * Standard discovery card. `label` is an editorial tag like "Best for mornings".
  * size="sm" is used in rails and dense grids.
+ * Gift pages pass `eyebrow` (who it's for) and `note` (a full gift line,
+ * e.g. "For the friend who…") in place of the category and best-for line.
  */
-export default function ProductCard({ product, label, cta = 'card', size = 'md', sizes = '(min-width: 1024px) 25vw, 50vw', priority = false }) {
+export default function ProductCard({ product, label, eyebrow, note, cta = 'card', size = 'md', sizes = '(min-width: 1024px) 25vw, 50vw', priority = false }) {
   const href = `/products/${product.slug}`;
   const onOpen = () => trackEvent('product_click', { entity_type: 'product', entity_id: product.id });
+  const kicker = eyebrow || product.brand || product.subcategory_name || product.category_name;
+  const line = note || (product.best_for && `For ${product.best_for.charAt(0).toLowerCase() + product.best_for.slice(1)}`);
 
   return (
     <article className="group flex h-full flex-col">
@@ -35,18 +39,14 @@ export default function ProductCard({ product, label, cta = 'card', size = 'md',
       </Link>
 
       <div className="flex flex-1 flex-col pt-3 sm:pt-4">
-        {(product.brand || product.subcategory_name || product.category_name) && (
-          <p className="eyebrow mb-1.5 text-[0.62rem]">{product.brand || product.subcategory_name || product.category_name}</p>
-        )}
+        {kicker && <p className="eyebrow mb-1.5 text-[0.62rem]">{kicker}</p>}
         <h3 className={`font-medium leading-snug tracking-[-0.01em] ${size === 'sm' ? 'text-[0.88rem] sm:text-[0.92rem]' : 'text-[0.94rem] sm:text-[1rem]'}`}>
           <Link to={href} onClick={onOpen} className="link-underline">
             {product.name}
           </Link>
         </h3>
-        {product.best_for && size !== 'sm' && (
-          <p className="mt-1.5 line-clamp-2 font-serif text-[0.98rem] leading-snug text-muted italic sm:mt-2 sm:text-[1.08rem]">
-            For {product.best_for.charAt(0).toLowerCase() + product.best_for.slice(1)}
-          </p>
+        {line && size !== 'sm' && (
+          <p className="mt-1.5 line-clamp-2 font-serif text-[0.98rem] leading-snug text-muted italic sm:mt-2 sm:text-[1.08rem]">{line}</p>
         )}
         <div className="mt-auto pt-3 sm:pt-4">
           <div className="flex items-center justify-between gap-3 border-t border-line pt-3">
