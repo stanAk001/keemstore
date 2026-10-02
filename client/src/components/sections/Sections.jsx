@@ -15,7 +15,7 @@ import AffiliateButton from '../product/AffiliateButton.jsx';
 import PriceTag from '../product/PriceTag.jsx';
 import GuideCard from '../cards/GuideCard.jsx';
 import CategoryCard from '../cards/CategoryCard.jsx';
-import { TrendRow, TrendPill, TrendTile } from '../cards/TrendCard.jsx';
+import { TrendRow, TrendPill, TrendTile, trendMonth } from '../cards/TrendCard.jsx';
 import NewsletterForm from '../NewsletterForm.jsx';
 import { useSite } from '../../context/SiteContext.jsx';
 import { Inline } from '../../lib/inline.jsx';
@@ -108,11 +108,13 @@ function Hero({ config: c, data = {} }) {
 // ---------------------------------------------------------------------------
 function Trending({ title, subtitle, data, index }) {
   const half = Math.ceil(data.trends.length / 2);
+  // Trends read from Pinterest carry the month they were measured.
+  const month = data.trends.map(trendMonth).find(Boolean);
   return (
     <Wrap>
       <div className="grid gap-6 md:gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <SectionHeader index={index} eyebrow="Trending now" title={title || 'People are looking for these right now'} subtitle={subtitle} align="stack" link={{ url: '/trending', label: 'All trends' }} />
+          <SectionHeader index={index} eyebrow={month ? `Pinterest Trends · ${month}` : 'Trending now'} title={title || 'People are looking for these right now'} subtitle={subtitle} align="stack" link={{ url: '/trending', label: 'See every trend' }} />
         </div>
         <div className="grid grid-cols-2 gap-x-3 gap-y-5 md:hidden">
           {data.trends.map((t, i) => <TrendTile key={t.id} trend={t} index={i + 1} />)}

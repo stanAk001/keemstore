@@ -22,12 +22,24 @@ export async function getTrendPublic(req, res) {
   const trend = await Trends.getTrend('slug', req.params.slug);
   if (!trend) throw notFound('Trend not found');
   const catIds = [trend.linked_category_id, trend.category_id].filter(Boolean);
-  const [guide, products, guides] = await Promise.all([
+  // Hand-picked products carry the trend's slug as a tag; otherwise fall back
+  // to the trend's category, then to a keyword search.
+  const picked = await findProducts({ tags: [trend.slug], limit: 12 });
+  const [guide, products, guides, related] = await Promise.all([
     trend.linked_guide_id ? getGuidesByIds([trend.linked_guide_id]) : [],
-    findProducts({ categoryIds: catIds.length ? catIds : undefined, q: catIds.length ? undefined : trend.keyword || trend.title, limit: 8 }),
+    picked.items.length
+      ? picked
+      : findProducts({ categoryIds: catIds.length ? catIds : undefined, q: catIds.length ? undefined : trend.keyword || trend.title, limit: 8 }),
     catIds.length ? listGuides({ categoryIds: catIds, limit: 4, excludeIds: [trend.linked_guide_id].filter(Boolean) }) : { items: [] },
+    trend.edit ? Trends.listTrends({ limit: 50 }) : [],
   ]);
-  res.json({ ...trend, guide: guide[0] || null, products: products.items, guides: guides.items });
+  res.json({
+    ...trend,
+    guide: guide[0] || null,
+    products: products.items,
+    guides: guides.items,
+    related: related.filter((t) => t.edit === trend.edit && t.id !== trend.id).slice(0, 6),
+  });
 }
 
 export async function listTrendsAdmin(_req, res) {

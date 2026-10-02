@@ -5,7 +5,7 @@ import { savePinterest, deletePinterest } from '../services/pinterest.service.js
 const WRITABLE = [
   'title', 'slug', 'keyword', 'description', 'image_url', 'category_id', 'source', 'trend_status',
   'trend_start', 'trend_end', 'priority', 'sort_order', 'active', 'linked_guide_id',
-  'linked_category_id', 'linked_url', 'seo',
+  'linked_category_id', 'linked_url', 'seo', 'growth', 'growth_note', 'measured_at', 'edit',
 ];
 
 // Active and inside its (optional) schedule window.
@@ -13,7 +13,7 @@ export const IS_CURRENT = `t.active and (t.trend_start is null or t.trend_start 
                            and (t.trend_end is null or t.trend_end > now())`;
 
 const SELECT = `
-  select t.*, c.name as category_name,
+  select t.*, to_char(t.measured_at, 'YYYY-MM-DD') as measured_at, c.name as category_name,
          g.slug as guide_slug, g.title as guide_title,
          lc.name as linked_category_name,
          case when lcp.slug is null then '/' || lc.slug else '/' || lcp.slug || '/' || lc.slug end as linked_category_path,

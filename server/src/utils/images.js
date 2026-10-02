@@ -10,6 +10,13 @@ export function sizedImage(url, width = 1200) {
       u.searchParams.set('fit', 'crop');
       return u.toString();
     }
+    if (u.hostname === 'images.pexels.com') {
+      u.search = '';
+      u.searchParams.set('auto', 'compress');
+      u.searchParams.set('cs', 'tinysrgb');
+      u.searchParams.set('w', String(width));
+      return u.toString();
+    }
     if (u.hostname === 'res.cloudinary.com' && u.pathname.includes('/image/upload/')) {
       return url.replace('/image/upload/', `/image/upload/c_limit,w_${width},q_auto,f_auto/`);
     }

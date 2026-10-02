@@ -13,6 +13,17 @@ export function sized(url, width, { height, quality = 75 } = {}) {
       u.searchParams.set('fit', 'crop');
       return u.toString();
     }
+    if (u.hostname === 'images.pexels.com') {
+      u.search = '';
+      u.searchParams.set('auto', 'compress');
+      u.searchParams.set('cs', 'tinysrgb');
+      u.searchParams.set('w', String(width));
+      if (height) {
+        u.searchParams.set('h', String(height));
+        u.searchParams.set('fit', 'crop');
+      }
+      return u.toString();
+    }
     // Shopify stores (partner retailers): resize by width only. No server-side
     // crop — Img anchors tall fashion photos to the top so heads aren't cut off.
     if (u.hostname === 'cdn.shopify.com') {
@@ -38,7 +49,7 @@ export function srcSet(url, maxWidth = 1800, aspect) {
       return '';
     }
   })();
-  if (!['images.unsplash.com', 'res.cloudinary.com', 'cdn.shopify.com'].includes(host)) return undefined;
+  if (!['images.unsplash.com', 'images.pexels.com', 'res.cloudinary.com', 'cdn.shopify.com'].includes(host)) return undefined;
   return WIDTHS.filter((w) => w <= maxWidth)
     .map((w) => `${sized(url, w, aspect ? { height: Math.round(w / aspect) } : {})} ${w}w`)
     .join(', ');

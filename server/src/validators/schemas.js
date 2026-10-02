@@ -240,13 +240,17 @@ export const trendSchema = z.object({
   trend_status: z.enum(['trending', 'rising', 'approaching', 'seasonal', 'evergreen']).optional(),
   trend_start: dateTime,
   trend_end: dateTime,
-  priority: z.coerce.number().int().min(0).max(100).optional(),
+  priority: z.coerce.number().int().min(0).max(1000).optional(),
   sort_order: z.coerce.number().int().optional(),
   active: z.boolean().optional(),
   linked_guide_id: optId,
   linked_category_id: optId,
   linked_url: optUrl,
   seo: seoSchema.optional(),
+  growth: optText(20),
+  growth_note: optText(60),
+  measured_at: dateTime,
+  edit: optText(60),
   pinterest: z.lazy(() => pinterestFields).nullable().optional(),
 });
 

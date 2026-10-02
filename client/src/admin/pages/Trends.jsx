@@ -16,6 +16,7 @@ import { CategorySelect, GuideSelect } from '../components/Pickers.jsx';
 const EMPTY = {
   title: '', slug: '', keyword: '', description: '', image_url: '', category_id: null, source: '', trend_status: 'trending',
   trend_start: null, trend_end: null, priority: 50, active: true, linked_guide_id: null, linked_category_id: null, linked_url: '', seo: {}, pinterest: null,
+  growth: '', growth_note: '', measured_at: null, edit: '',
 };
 
 function windowLabel(t) {
@@ -65,7 +66,7 @@ export default function Trends() {
               }} />
               {t.image_url ? <img src={sized(t.image_url, 80)} alt="" className="h-10 w-10 rounded-full object-cover" /> : <span className="h-10 w-10 rounded-full bg-paper-2" />}
               <div className="min-w-0 flex-1">
-                <p className="font-medium">{t.title} <span className="ml-1 font-mono text-[0.68rem] text-muted uppercase">{STATUS_LABEL[t.trend_status]}</span></p>
+                <p className="font-medium">{t.title} <span className="ml-1 font-mono text-[0.68rem] text-muted uppercase">{STATUS_LABEL[t.trend_status]}</span>{t.growth && <span className="ml-1 font-mono text-[0.68rem] text-good">{t.growth}</span>}</p>
                 <p className="truncate font-mono text-[0.7rem] text-muted">→ {t.href}{t.trend_end ? ` · ends ${new Date(t.trend_end).toLocaleDateString()}` : ''}{t.trend_start && new Date(t.trend_start) > new Date() ? ` · starts ${new Date(t.trend_start).toLocaleDateString()}` : ''}</p>
               </div>
               <span className="font-mono text-[0.72rem] text-muted" title="Priority">P{t.priority}</span>
@@ -93,13 +94,23 @@ export default function Trends() {
               <TextArea label="Description" value={editing.description} onChange={set('description')} rows={2} />
               <div className="grid grid-cols-2 gap-3">
                 <SelectInput label="Trend status" value={editing.trend_status} onChange={set('trend_status')} options={Object.entries(STATUS_LABEL).map(([value, label]) => ({ value, label }))} />
-                <TextInput label="Priority (0–100)" type="number" min="0" max="100" value={editing.priority} onChange={(v) => set('priority')(Number(v))} />
+                <TextInput label="Priority" type="number" min="0" max="1000" value={editing.priority} onChange={(v) => set('priority')(Number(v))} hint="Higher shows first" />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <TextInput label="Starts" type="datetime-local" value={toLocalInput(editing.trend_start)} onChange={(v) => set('trend_start')(fromLocalInput(v))} hint="Blank = now" />
                 <TextInput label="Ends" type="datetime-local" value={toLocalInput(editing.trend_end)} onChange={(v) => set('trend_end')(fromLocalInput(v))} hint="Blank = no end" />
               </div>
-              <TextInput label="Source" value={editing.source} onChange={set('source')} placeholder="Pinterest Trends, Oct 2026" />
+              <TextInput label="Source" value={editing.source} onChange={set('source')} placeholder="Pinterest Trends · shopping · #1 in the US" />
+              <div className="rounded-sm border border-line bg-card p-4">
+                <p className="label">Growth figure</p>
+                <p className="mb-3 text-[0.75rem] text-muted">Shown as “↑243% month over month · Oct 2026”. Update monthly from Pinterest Trends; leave blank to hide.</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <TextInput label="Growth" value={editing.growth} onChange={set('growth')} placeholder="↑243%" />
+                  <TextInput label="Measured on" type="date" value={editing.measured_at ? String(editing.measured_at).slice(0, 10) : ''} onChange={(v) => set('measured_at')(v || null)} />
+                  <TextInput label="What it measures" value={editing.growth_note} onChange={set('growth_note')} placeholder="month over month" />
+                  <TextInput label="Edit (group)" value={editing.edit} onChange={set('edit')} placeholder="The Beauty Shelf" hint="Groups trends on /trending" />
+                </div>
+              </div>
               <ImageField label="Image" value={editing.image_url} onChange={set('image_url')} aspect="1" />
               <Toggle label="Active" checked={editing.active} onChange={set('active')} />
             </div>
