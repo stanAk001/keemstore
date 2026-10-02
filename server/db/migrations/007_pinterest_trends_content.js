@@ -361,13 +361,13 @@ const EDITS = {
 const TRENDS = [
   ['eyeliners', 'Eyeliners', 1, '↑243%', 'month over month', 'beauty', 'trending', 'makeup',
     'winged eyeliner, gel eyeliner, eyeliner for hooded eyes',
-    'The single fastest-growing shopping search on Pinterest this month. Graphic wings and smudgy kohl are both back — here are the pens, gels and pencils that make either look easy.', 'P8005247'],
+    'Graphic wings and smudgy kohl are both back. The pens, gels and pencils that make either look easy — even on hooded eyes.', 'P8005247'],
   ['gardening-tools', 'Gardening tools', 2, '↑152%', 'month over month', 'home', 'trending', 'garden',
     'autumn garden tools, pruning shears, gifts for gardeners',
     'Autumn is planting and pruning season, and people are kitting out. The hard-working basics every gardener reaches for, from pruners to a proper watering can.', 'P3971211'],
   ['face-lotions-creams', 'Face lotions & creams', 3, '↑102%', 'month over month', 'beauty', 'trending', 'skincare',
     'night cream, face lotion with spf, barrier repair cream',
-    'Cooler air means drier skin, and searches for richer creams have doubled. Night creams, barrier repair and daily SPF lotions — matched to skin type.', 'P6635922'],
+    'Cooler air means drier skin. Night creams, barrier repair and daily SPF lotions, matched to your skin type.', 'P6635922'],
   ['costumes-accessories', 'Costumes & accessories', 4, '↑93%', 'month over month', 'holidays', 'trending', null,
     'halloween costume ideas, easy costumes, masquerade',
     'Halloween costume shopping is in full swing. Pieces that turn everyday clothes into a costume, plus a few easy wins for last-minute parties.', 'P9147706'],
@@ -382,7 +382,7 @@ const TRENDS = [
     'Serums are where skincare does its heavy lifting. A clear guide to what each one does — brightening, hydrating, smoothing — so you buy the right one.', 'P8102021'],
   ['boots', 'Boots', 8, '↑54%', 'month over month', 'wardrobe', 'trending', null,
     'fall boots, knee high boots, combat boots outfit',
-    'Boot season is here. Knee-highs, lug-sole combats, Chelseas and proper winter boots — the shapes people are pinning most.', 'P12932771'],
+    'Boot season is here. Knee-highs, lug-sole combats, Chelseas and proper winter boots — the shapes everyone is wearing this autumn.', 'P12932771'],
   ['facial-moisturizers', 'Facial moisturizers', 9, '↑50%', 'month over month', 'beauty', 'trending', 'skincare',
     'best moisturizer for dry skin, oil free moisturizer, tinted moisturizer',
     'The one product every routine needs. Gel-creams for oily skin, rich creams for dry — and tinted options for low-effort mornings.', 'P29755259'],
@@ -412,16 +412,16 @@ const TRENDS = [
     'Small sculptures are the easiest way to give a shelf personality. Playful ceramics, a classic nutcracker and calm, modern pieces.', 'P14793959'],
   ['body-washes', 'Body washes', 19, '↑27%', 'month over month', 'beauty', 'trending', 'bath-body',
     'moisturizing body wash, shower routine, body scrub',
-    'The “everything shower” is all over Pinterest. Gentle washes, oils and scrubs that turn a quick rinse into a proper routine.', 'P9475410'],
+    'The “everything shower” is the self-care ritual of the season. Gentle washes, oils and scrubs that turn a quick rinse into a proper routine.', 'P9475410'],
   ['oxfords-loafers', 'Oxfords & loafers', 20, '↑27%', 'month over month', 'wardrobe', 'trending', null,
     'loafers outfit, oxford shoes, chunky loafers women',
     'Smart shoes are back in rotation. Classic oxfords and brogues, slip-on loafers and the chunky chain loafer everyone is wearing.', 'P29258015'],
   ['crockpot-dinners', 'Crockpot dinners', null, '↑1,500%', 'searches, month over month', 'home', 'rising', 'kitchen',
     'crockpot dinner recipes, slow cooker meals, dump and go dinners',
-    'Searches for crockpot dinners are up fifteen-fold as busy autumn weeknights kick in. The cookers and pans that make set-and-forget dinners easy.', 'P30678525'],
+    'Busy autumn weeknights call for set-and-forget dinners. The cookers and pans that make crockpot cooking easy.', 'P30678525'],
   ['gaming-room-setups', 'Gaming room setups', null, '↑700%', 'searches, month over month', 'home', 'rising', null,
     'gaming room ideas, gaming setup, rgb setup',
-    'Gaming room makeovers are one of Pinterest’s fastest-growing searches. The chair, desk, lighting and gear that make a setup feel finished.', 'P28993061'],
+    'The gaming room makeover is this year’s favourite home project. The chair, desk, lighting and gear that make a setup feel finished.', 'P28993061'],
 ];
 
 async function categoryId(client, slug, parentSlug) {
@@ -511,11 +511,12 @@ export async function up(client) {
     [MEASURED_AT, EDITS.holidays],
   );
 
-  // 4. Homepage: the trending list becomes the Pinterest board.
+  // 4. Homepage: the trending section becomes a shoppable grid of this month's trends.
+  //    (The Pinterest figures stay behind the scenes — they set the order, shoppers see the products.)
   await client.query(
-    `update homepage_sections set title = 'Trending on Pinterest this month',
-            subtitle = coalesce(subtitle, 'The fastest-growing shopping searches in the US — and the finds worth buying for each.'),
-            config = config || '{"limit": 10}'::jsonb
+    `update homepage_sections set title = 'What everyone’s buying this month',
+            subtitle = 'The pieces people can’t stop shopping for right now — picked, checked and ready to buy.',
+            config = config || '{"limit": 8}'::jsonb
       where key = 'trending' and title = 'People are looking for these right now'`,
   );
 }

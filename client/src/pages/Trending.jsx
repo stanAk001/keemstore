@@ -4,7 +4,7 @@ import { usePageView } from '../lib/hooks.js';
 import { Seo, breadcrumbLd } from '../lib/seo.jsx';
 import { STATUS_LABEL, pad } from '../lib/format.js';
 import { useSite } from '../context/SiteContext.jsx';
-import TrendCard, { TrendRow, trendMonth } from '../components/cards/TrendCard.jsx';
+import TrendCard from '../components/cards/TrendCard.jsx';
 import ProductCard from '../components/product/ProductCard.jsx';
 import GuideCard from '../components/cards/GuideCard.jsx';
 import Img from '../components/ui/Img.jsx';
@@ -15,9 +15,9 @@ import NotFound from './NotFound.jsx';
 
 const ORDER = ['trending', 'rising', 'approaching', 'seasonal', 'evergreen'];
 
-// One line under each edit's heading. Edits without a line just show their name.
+// One line under each collection's heading. Collections without a line just show their name.
 const EDIT_BLURB = {
-  'The Beauty Shelf': 'Makeup, skincare and body care — the beauty searches growing fastest this month.',
+  'The Beauty Shelf': 'Graphic liner, glowing skin and the shower routine everyone’s talking about.',
   'Cold-Weather Wardrobe': 'Boots, coats and the cosy pieces people are buying as the temperature drops.',
   'Home for the Holidays': 'Decorating, baking and fireside evenings — the home side of the season.',
   'Projects at Home': 'Garden jobs, slow-cooker dinners and gaming-room makeovers.',
@@ -27,55 +27,37 @@ export function TrendingIndex() {
   const { data, error, loading, reload } = useFetch('/trends?limit=60');
   usePageView({ ready: Boolean(data) });
   const trends = data || [];
-  const month = trends.map(trendMonth).find(Boolean);
-  // The board: every trend with a measured growth figure, in rank order.
-  const board = trends.filter((t) => t.growth);
-  const half = Math.ceil(board.length / 2);
-  // Edits in the order their top trend ranks; everything else grouped by status.
-  const edits = [...new Set(board.map((t) => t.edit).filter(Boolean))].map((name) => [name, trends.filter((t) => t.edit === name)]);
+  // Collections in the order of their most popular trend; everything else grouped by status.
+  const edits = [...new Set(trends.map((t) => t.edit).filter(Boolean))].map((name) => [name, trends.filter((t) => t.edit === name)]);
   const rest = ORDER.map((s) => [s, trends.filter((t) => !t.edit && t.trend_status === s)]).filter(([, items]) => items.length);
 
   return (
     <>
-      <Seo title="Trending now" description="This month's fastest-growing shopping searches on Pinterest, and the products worth buying for each." path="/trending" />
+      <Seo title="Trending now" description="What people are shopping for this season — and the pieces actually worth buying." path="/trending" />
       <header className="container-x pt-6 md:pt-16">
-        <p className="eyebrow flex items-center gap-2">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-          {month ? `Pinterest Trends · United States · ${month}` : 'Updated through the season'}
+        <p className="eyebrow flex items-center gap-2"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />Updated every month</p>
+        <h1 className="mt-4 max-w-4xl font-serif text-[clamp(3rem,1.6rem+6vw,6.5rem)] leading-[0.9] tracking-[-0.025em]">What everyone’s shopping for right now.</h1>
+        <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-ink-2 sm:text-[1.12rem]">
+          From graphic eyeliner to the perfect winter boot — the pieces people are buying this season, and our pick of the ones worth it.
         </p>
-        <h1 className="mt-4 max-w-4xl font-serif text-[clamp(3rem,1.6rem+6vw,6.5rem)] leading-[0.9] tracking-[-0.025em]">What people are looking for right now.</h1>
-        {board.length > 0 && (
-          <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-ink-2 sm:text-[1.12rem]">
-            Every month we read Pinterest’s fastest-growing shopping searches, then pick the products actually worth buying for each one.
-          </p>
+        {edits.length > 1 && (
+          <nav className="mt-8 flex flex-wrap gap-2" aria-label="Collections">
+            {edits.map(([name]) => (
+              <a key={name} href={`#${slugOf(name)}`} className="rounded-full border border-line-strong px-4 py-1.5 text-[0.88rem] hover:border-ink">{name}</a>
+            ))}
+          </nav>
         )}
       </header>
 
       <div className="container-x mt-14 space-y-24">
         {error && !data && <ErrorState error={error} onRetry={reload} />}
         {loading && !data && <CardGridSkeleton aspect="aspect-[3/4]" />}
-        {data && !data.length && <EmptyState title="No trends right now" body="Check back soon — we update this page as searches shift." action={{ url: '/guides', label: 'Browse buying guides' }} />}
+        {data && !data.length && <EmptyState title="No trends right now" body="Check back soon — we update this page every month." action={{ url: '/guides', label: 'Browse buying guides' }} />}
 
-        {board.length > 0 && (
-          <section aria-labelledby="board-title">
-            <div className="flex flex-wrap items-end justify-between gap-3 border-t border-ink pt-4">
-              <h2 id="board-title" className="font-serif text-title">The board</h2>
-              <p className="font-mono text-[0.72rem] text-muted">Growth = change in Pinterest searches, month over month</p>
-            </div>
-            <div className="mt-4 grid gap-x-10 md:grid-cols-2">
-              {[board.slice(0, half), board.slice(half)].map((col, c) => (
-                <div key={c} className="border-b border-line">
-                  {col.map((t, i) => <TrendRow key={t.id} trend={{ ...t, href: t.page_url }} index={c * half + i + 1} />)}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {edits.map(([name, items]) => (
-          <section key={name}>
+        {edits.map(([name, items], i) => (
+          <section key={name} id={slugOf(name)} className="scroll-mt-24">
             <div className="border-t border-ink pt-4">
-              <p className="eyebrow">The edit</p>
+              <p className="eyebrow">{pad(i + 1)} — The collection</p>
               <h2 className="mt-2 font-serif text-headline">{name}</h2>
               {EDIT_BLURB[name] && <p className="mt-2 max-w-xl text-ink-2">{EDIT_BLURB[name]}</p>}
             </div>
@@ -88,7 +70,7 @@ export function TrendingIndex() {
         {rest.map(([status, items], i) => (
           <section key={status}>
             <h2 className="mb-8 border-t border-ink pt-4 font-serif text-title">
-              {board.length && i === 0 ? `Also on our radar · ${STATUS_LABEL[status]}` : STATUS_LABEL[status]}
+              {edits.length && i === 0 ? `More to explore · ${STATUS_LABEL[status]}` : STATUS_LABEL[status]}
             </h2>
             <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
               {items.map((t) => <TrendCard key={t.id} trend={t} />)}
@@ -100,11 +82,7 @@ export function TrendingIndex() {
   );
 }
 
-/** "#1 shopping trend in the US" from a source like "Pinterest Trends · shopping · #1 in the US". */
-function rankLabel(source) {
-  const m = String(source || '').match(/shopping · #(\d+)/);
-  return m ? `#${m[1]} shopping trend in the US` : /search/.test(source || '') ? 'Fast-growing search' : null;
-}
+const slugOf = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 export function TrendPage() {
   const { slug } = useParams();
@@ -118,8 +96,6 @@ export function TrendPage() {
   if (!t) return null;
   const crumbs = [{ label: 'Home', to: '/' }, { label: 'Trending', to: '/trending' }, { label: t.title, to: `/trending/${t.slug}` }];
   const cta = t.guide ? { to: `/guides/${t.guide.slug}`, label: 'Read the guide' } : t.href !== t.page_url ? { to: t.href, label: 'Shop this trend' } : null;
-  const month = trendMonth(t);
-  const rank = rankLabel(t.source);
 
   return (
     <>
@@ -127,25 +103,20 @@ export function TrendPage() {
       <header className="container-x grid gap-10 pt-8 md:pt-12 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7">
           <Breadcrumbs items={crumbs} />
-          {t.growth ? (
-            <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 sm:mt-10">
-              <span className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-card py-1 pr-3 pl-1.5">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent font-serif text-[0.7rem] text-white" aria-hidden>P</span>
-                <span className="text-[0.82rem] font-medium">Trending on Pinterest</span>
-              </span>
-              <span className="text-[0.86rem] text-ink-2">
-                <span className="font-mono font-medium text-good">{t.growth}</span> {t.growth_note}
-                {month && <span className="text-muted"> · {month}</span>}
-              </span>
-            </div>
-          ) : (
-            <p className="eyebrow mt-6 sm:mt-10 text-accent-ink">{STATUS_LABEL[t.trend_status]}</p>
-          )}
+          <p className="eyebrow mt-6 flex items-center gap-2 text-accent-ink sm:mt-10">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+            {t.edit ? `Trending now · ${t.edit}` : STATUS_LABEL[t.trend_status]}
+          </p>
           <h1 className="mt-4 font-serif text-[clamp(3rem,1.6rem+6vw,6.5rem)] leading-[0.9] tracking-[-0.025em]">{t.title}</h1>
-          {rank && <p className="mt-3 font-mono text-[0.78rem] tracking-wide text-muted uppercase">{rank}{t.edit && ` · ${t.edit}`}</p>}
           {t.description && <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-ink-2 sm:text-[1.1rem]">{t.description}</p>}
-          {t.keyword && <p className="mt-4 font-mono text-sm text-muted">People are searching: “{t.keyword}”</p>}
-          {cta && <ButtonLink to={cta.to} className="mt-8" iconRight="arrow">{cta.label}</ButtonLink>}
+          {cta ? (
+            <ButtonLink to={cta.to} className="mt-8" iconRight="arrow">{cta.label}</ButtonLink>
+          ) : t.products.length > 0 && (
+            <ButtonLink to="#shop" className="mt-8" iconRight="arrow"
+              onClick={(e) => { e.preventDefault(); document.getElementById('shop')?.scrollIntoView({ behavior: 'smooth' }); }}>
+              Shop the trend
+            </ButtonLink>
+          )}
         </div>
         <div className="lg:col-span-5">
           <Img src={t.image_url} alt={t.title} aspect={4 / 5} priority width={900} sizes="(min-width: 1024px) 40vw, 100vw" />
@@ -159,7 +130,7 @@ export function TrendPage() {
         </section>
       )}
       {t.products.length > 0 && (
-        <section className="container-x mt-20">
+        <section id="shop" className="container-x mt-20 scroll-mt-24">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-3 border-t border-ink pt-4">
             <h2 className="font-serif text-headline">Shop the trend</h2>
             <p className="font-mono text-[0.72rem] text-muted">{pad(t.products.length)} picks · chosen by our editors</p>
@@ -178,7 +149,7 @@ export function TrendPage() {
       {t.related?.length > 0 && (
         <section className="container-x mt-20">
           <div className="border-t border-ink pt-4">
-            <p className="eyebrow">More from the edit</p>
+            <p className="eyebrow">More from the collection</p>
             <h2 className="mt-2 mb-8 font-serif text-headline">{t.edit}</h2>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
