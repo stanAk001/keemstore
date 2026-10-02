@@ -276,8 +276,9 @@ Without Cloudinary the media library still works for images added by URL.
    to create the admin account (and demo content, if you want it).
 
 Without the blueprint: create a Node web service with root directory `server`,
-build `npm install --omit=dev`, pre-deploy `npm run db:migrate`, start `npm start`,
-health check `/health`. If you connect from outside Render's network, set `DATABASE_SSL=true`.
+build `npm install --omit=dev`, start `npm start`, health check `/health`. `npm start`
+applies any pending migrations before the server starts, so this works on plans without a
+pre-deploy step too. If you connect from outside Render's network, set `DATABASE_SSL=true`.
 
 ### 2. Site on Vercel
 
