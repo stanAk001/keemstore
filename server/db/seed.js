@@ -9,6 +9,7 @@ import * as D from './seeds/data.js';
 import { seedCatalog } from './seed-catalog.js';
 import { up as giftGuide } from './migrations/005_gift_guide_content.js';
 import { up as pinterestTrends } from './migrations/007_pinterest_trends_content.js';
+import { up as moreTrendPicks } from './migrations/008_more_trend_picks.js';
 
 async function seedAdmin(client) {
   if (!env.adminEmail || !env.adminPassword) {
@@ -266,6 +267,7 @@ async function run() {
     // Content migrations ran before this content existed; apply them now.
     await giftGuide(client);
     await pinterestTrends(client);
+    await moreTrendPicks(client);
     console.log('[seed] gift guide and Pinterest trends applied');
   });
 }
