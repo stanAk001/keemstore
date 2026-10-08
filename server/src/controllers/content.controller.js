@@ -24,7 +24,7 @@ export async function getTrendPublic(req, res) {
   const catIds = [trend.linked_category_id, trend.category_id].filter(Boolean);
   // Hand-picked products carry the trend's slug as a tag; otherwise fall back
   // to the trend's category, then to a keyword search.
-  const picked = await findProducts({ tags: [trend.slug], limit: 12 });
+  const picked = await findProducts({ tags: [trend.slug], limit: 24 });
   const [guide, products, guides, related] = await Promise.all([
     trend.linked_guide_id ? getGuidesByIds([trend.linked_guide_id]) : [],
     picked.items.length
